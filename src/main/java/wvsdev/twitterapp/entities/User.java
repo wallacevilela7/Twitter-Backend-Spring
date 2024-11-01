@@ -1,8 +1,9 @@
 package wvsdev.twitterapp.entities;
 
 import jakarta.persistence.*;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import wvsdev.twitterapp.controller.dto.LoginRequest;
 
-import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
@@ -64,5 +65,13 @@ public class User {
 
     public Set<Role> getRoles() {
         return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
+    public boolean isLoginCorrect(LoginRequest loginRequest, PasswordEncoder passwordEncoder) {
+        return passwordEncoder.matches(loginRequest.password(), this.password);
     }
 }
