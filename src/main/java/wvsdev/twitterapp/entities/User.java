@@ -28,6 +28,16 @@ public class User {
     )
     private Set<Role> roles;
 
+    public User() {
+    }
+
+    public User(UUID userId, String username, String password, Set<Role> roles) {
+        this.userId = userId;
+        this.username = username;
+        this.password = password;
+        this.roles = roles;
+    }
+
     public UUID getUserId() {
         return userId;
     }
@@ -54,9 +64,5 @@ public class User {
 
     public Set<Role> getRoles() {
         return roles;
-    }
-
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
     }
 }
