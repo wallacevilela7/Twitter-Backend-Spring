@@ -1,0 +1,21 @@
+meta {
+  name: Create Tweet
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/tweets
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+      "content":"dia quatro do onze"
+  }
+}

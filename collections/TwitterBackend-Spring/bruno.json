@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "TwitterBackend-Spring",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
